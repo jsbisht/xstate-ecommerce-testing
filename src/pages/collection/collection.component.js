@@ -9,7 +9,7 @@ const CollectionPage = ({ collection }) => {
     const { title, items } = collection;
     console.log(items);
     return (
-        <div className="collection-page">
+        <div className="collection-page" data-testid="category-page">
             <h2 className="title">{title}</h2>
                 <div className="items">
                     {

@@ -11,7 +11,7 @@ import { createStructuredSelector } from 'reselect';
 const CartIcon = ({toggleCartHidden, itemCount}) => {
     // { toggleCartHidden } = this.props.toggleCartHidden /// toggleCartHidden = this.props
     return (
-        <button className="cart-icon" onClick={ toggleCartHidden }>
+        <button className="cart-icon" onClick={ toggleCartHidden } data-testid='cart-icon'>
             <ShoppingIcon className="shopping-icon"/>
             <span className="item-count">{itemCount}</span>
         </button>

@@ -6,8 +6,8 @@ module.exports = {
   },
   launch: {
     headless: false,
-    slowMo: 50,
+    slowMo: 250,
     executablePath:
-      "/home/jsbisht/.nvm/versions/node/v10.21.0/lib/node_modules/puppeteer/.local-chromium/linux-782078/chrome-linux/chrome",
+      "/usr/local/Cellar/node/14.8.0/lib/node_modules/puppeteer/.local-chromium/mac-782078/chrome-mac/Chromium.app/Contents/MacOS/Chromium",
   },
 };
