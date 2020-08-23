@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import HomePage from './pages/homepage/homepage.component';
+import Home from './pages/Home';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import ShopPage from './pages/shop/shop-page.component';
-import Header from './components/header/header.component';
-import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import Shop from './pages/Shop';
+import Header from './components/molecules/Header';
+import Login from './pages/Login';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
-import CheckoutPage from './pages/checkout/checkout.component';
-import ConfirmationPage from './pages/confirmation/confirmation.component';
+import Checkout from './pages/Checkout';
+import Confirmation from './pages/Confirmation';
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -38,19 +38,19 @@ class App extends Component {
     this.unsubscribeFromAuth();
   }
 
-  
+
   render() {
     return (
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' component={HomePage}/>
-          <Route path='/shop' component={ShopPage}/>
+          <Route exact path='/' component={Home}/>
+          <Route path='/shop' component={Shop}/>
           <Route exact path='/signin'
-            render={() => this.props.currentUser ? (<Redirect to='/'/>) : (<SignInAndSignUp/>)}
+            render={() => this.props.currentUser ? (<Redirect to='/'/>) : (<Login/>)}
           />
-          <Route exact path='/checkout' component={CheckoutPage}/>
-          <Route exact path = '/confirmation' component = { ConfirmationPage }/>
+          <Route exact path='/checkout' component={Checkout}/>
+          <Route exact path = '/confirmation' component = { Confirmation }/>
         </Switch>
       </div>
     );
