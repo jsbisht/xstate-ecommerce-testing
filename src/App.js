@@ -11,13 +11,15 @@ import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
 import Checkout from './pages/Checkout';
+import { toggleCartHidden } from './redux/cart/cart.actions';
+import {selectCartHidden} from './redux/cart/cart.selectors'
 import Confirmation from './pages/Confirmation';
 
 class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
+    const { setCurrentUser, hidden } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
       if(userAuth) {
@@ -31,6 +33,10 @@ class App extends Component {
       });
     }
     setCurrentUser(userAuth);
+    if(!hidden){
+      toggleCartHidden();
+    }
+    
     });
   }
 
@@ -59,11 +65,13 @@ class App extends Component {
 }
 
 const mapStateToProps = createStructuredSelector ({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
+  hidden: selectCartHidden
 });
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user)) 
+  setCurrentUser: user => dispatch(setCurrentUser(user)) ,
+  toggleCartHidden: () => dispatch(toggleCartHidden())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

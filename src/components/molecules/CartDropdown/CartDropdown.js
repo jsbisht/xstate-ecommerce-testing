@@ -22,29 +22,28 @@ const CartDropdown = ({cartItems, history, dispatch}) => {
                     <span className="empty-message">Your cart is empty</span>
                 }
             </div>
-            <CustomButton 
-                dataTestId={`checkout-button`}
-            onClick={() => {
-                history.push('/checkout');
-                dispatch(toggleCartHidden());
-            }}>GO TO CHECKOUT</CustomButton>
+            <div className="button-group">
+                <CustomButton 
+                    dataTestId={`close-cart-button`}
+                onClick={() => {
+                    dispatch(toggleCartHidden());
+                }}>Close</CustomButton>
+                <CustomButton 
+                    dataTestId={`checkout-button`}
+                onClick={() => {
+                    history.push('/checkout');
+                    dispatch(toggleCartHidden());
+                }}>GO TO CHECKOUT</CustomButton>
+            </div>
         </div>
     )
 }
 
-// const mapStateToProps = (state) => ({
-//     cartItems: selectCartItems(state)
-// })
-//OR reselect
+
 
 const mapStateToProps = createStructuredSelector ({
     cartItems: selectCartItems
 })
 
-// function mapStateToProps ({cart: {cartItems}}) {
-//     return {cartItems}
-// }
 
 export default withRouter(connect(mapStateToProps)(CartDropdown));
-
-///*** connect by default passes dispatch to the component if no second argument is passed, from ther one can call any action required

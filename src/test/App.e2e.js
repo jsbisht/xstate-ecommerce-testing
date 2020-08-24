@@ -99,7 +99,7 @@ describe("feedback app", () => {
               await page.goto("http://localhost:3000");
               await path.test(page);
             },
-            10000
+            20000
         );
       });
     });
