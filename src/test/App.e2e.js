@@ -92,17 +92,10 @@ describe("feedback app", () => {
         it(
           path.description,
           async () => {
-<<<<<<< HEAD
               await page.goto("http://localhost:3000");
               await path.test(page);
             },
             20000
-=======
-            await page.goto("http://localhost:3000", {});
-            await path.test(page);
-          },
-          30000
->>>>>>> 73eb96ae4051da4a6728539aa621efe296229db4
         );
       });
     });
