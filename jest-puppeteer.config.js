@@ -9,5 +9,8 @@ module.exports = {
     slowMo: 50,
     executablePath:
       "/home/jsbisht/.nvm/versions/node/v10.21.0/lib/node_modules/puppeteer/.local-chromium/linux-782078/chrome-linux/chrome",
+    args: [
+      '--window-size=1920,1080',
+    ],
   },
 };

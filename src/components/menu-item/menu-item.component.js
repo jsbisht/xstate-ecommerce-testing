@@ -12,7 +12,7 @@ const MenuItem = ({
   location,
 }) => {
   return (
-    <div
+    <button
       data-testid={`menu-item-${title.toLowerCase()}`}
       className={` ${size} menu-item`}
       onClick={() => history.push(`${match.url}${linkUrl}`)}
@@ -27,7 +27,7 @@ const MenuItem = ({
         <h1 className="title">{title.toUpperCase()}</h1>
         <span className="subtitle">SHOP NOW</span>
       </div>
-    </div>
+    </button>
   );
 };
 

@@ -12,7 +12,11 @@ import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
-import CheckoutPage from './pages/checkout/checkout.component';
+import Checkout from './pages/Checkout';
+import { toggleCartHidden } from './redux/cart/cart.actions';
+import {selectCartHidden} from './redux/cart/cart.selectors'
+import Confirmation from './pages/Confirmation';
+import ProductPage from './pages/ProductPage';
 
 class App extends Component {
 
@@ -60,7 +64,13 @@ class App extends Component {
           <Route exact path='/signin'
             render={() => this.props.currentUser ? (<Redirect to='/'/>) : (<SignInAndSignUp/>)}
           />
+<<<<<<< Updated upstream
           <Route exact path='/checkout' component={CheckoutPage}/>
+=======
+          <Route path='/product' component={ProductPage}/>
+          <Route exact path='/checkout' component={Checkout}/>
+          <Route exact path = '/confirmation' component = { Confirmation }/>
+>>>>>>> Stashed changes
         </Switch>
         {/* 
           exact returs boolean, exact={true}, path is string, component takes a 
