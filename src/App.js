@@ -64,13 +64,9 @@ class App extends Component {
           <Route exact path='/signin'
             render={() => this.props.currentUser ? (<Redirect to='/'/>) : (<SignInAndSignUp/>)}
           />
-<<<<<<< Updated upstream
-          <Route exact path='/checkout' component={CheckoutPage}/>
-=======
           <Route path='/product' component={ProductPage}/>
           <Route exact path='/checkout' component={Checkout}/>
           <Route exact path = '/confirmation' component = { Confirmation }/>
->>>>>>> Stashed changes
         </Switch>
         {/* 
           exact returs boolean, exact={true}, path is string, component takes a 
