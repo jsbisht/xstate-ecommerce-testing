@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { selectCollection } from '../../../redux/shop/shop.selectors';
 import CollectionItem from '../../molecules/CollectionItem';
 
-const Collection = ({ collection }) => {
+const Collection = ({ collection, history }) => {
     
     const { title, items } = collection;
     console.log(items);
@@ -14,7 +14,7 @@ const Collection = ({ collection }) => {
                 <div className="items">
                     {
                         items.map( item => (
-                            <CollectionItem key={item.id} item={item}/>
+                            <CollectionItem key={item.id} item={item} history={history}/>
                             )
                         )
                     }

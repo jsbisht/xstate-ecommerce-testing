@@ -1,0 +1,20 @@
+.product-page {
+  &__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+    img{
+      flex: 1;
+    }
+
+    
+  }
+
+  &__detail {
+    flex: 2;
+    align-self: flex-start;
+    padding-left: 20px
+  }
+
+}

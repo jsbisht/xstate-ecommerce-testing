@@ -7,5 +7,8 @@ module.exports = {
   launch: {
     headless: false,
     slowMo: 50,
+    args: [
+      '--window-size=1920,1080',
+    ],
   },
 };
