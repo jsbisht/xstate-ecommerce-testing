@@ -14,10 +14,7 @@ import Checkout from './pages/Checkout';
 import { toggleCartHidden } from './redux/cart/cart.actions';
 import {selectCartHidden} from './redux/cart/cart.selectors'
 import Confirmation from './pages/Confirmation';
-<<<<<<< HEAD
-=======
 import ProductPage from './pages/ProductPage';
->>>>>>> 4e410c4083a24ed5751a9e9e2d409767b9189450
 
 class App extends Component {
   unsubscribeFromAuth = null;
